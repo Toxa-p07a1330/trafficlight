@@ -3,7 +3,7 @@ class Switch extends React.Component{
     render(props) {
         return (
             <div>
-                props.
+
             </div>
         );
     }

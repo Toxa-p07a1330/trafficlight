@@ -1,8 +1,9 @@
-
+import Switches from "./Switches";
+import React from "react";
 function App() {
   return (
    <div>
-     code goes here
+     <Switches />
    </div>
   );
 }
