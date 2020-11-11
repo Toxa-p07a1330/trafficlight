@@ -15,7 +15,58 @@ app.get("/", function(request, response){
             floor: 5,
             status: 2,
             ip: "192.168.1.1",
-            description:"test2"},
+            description:"test2"
+		},{
+            building: 7,
+            floor: 5,
+            status: 2,
+            ip: "192.168.1.1",
+            description:"test2"
+		},{
+            building: 7,
+            floor: 5,
+            status: 2,
+            ip: "192.168.1.1",
+            description:"test2"
+		},{
+            building: 7,
+            floor: 5,
+            status: 2,
+            ip: "192.168.1.1",
+            description:"test2"
+		},
+        {
+
+            building: 8,
+            floor: 11,
+            status: 3,
+            ip: "192.168.1.1",
+            description:"jopa"
+        },
+        {
+
+            building: 8,
+            floor: 11,
+            status: 3,
+            ip: "192.168.1.1",
+            description:"jopa"
+        },
+        {
+
+            building: 8,
+            floor: 11,
+            status: 3,
+            ip: "192.168.1.1",
+            description:"jopa"
+        },
+        {
+
+            building: 8,
+            floor: 11,
+            status: 3,
+            ip: "192.168.1.1",
+            description:"jopa"
+        },
         {
 
             building: 8,

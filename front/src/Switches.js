@@ -1,5 +1,6 @@
 import React from 'react'
 import Switch from "./Switch";
+import Building from "./Building";
 const wayToApi = "http://localhost:3001/";
 class Switches extends React.Component{
     constructor() {
@@ -20,9 +21,23 @@ class Switches extends React.Component{
                         return (
                             <div>
                                 {
-                                    this.state.data.map((value)=>{
-                                        return <Switch prop={value}/>
-                                    })
+                                    (()=>{
+                                        let buildings = []
+                                        for (let i = 5; i<10; i++) {
+                                            let obschaga = {}
+                                            obschaga = this.state.data.filter((value)=>{
+                                                return value.building === i;
+                                            })
+                                            buildings[i] = obschaga;
+                                            buildings[i].building = i;
+
+                                        }
+                                        console.log("_______")
+                                        console.log(buildings)
+                                        return buildings.map((value, index, array)=>{
+                                            return <div><Building prop = {value} building = {index}/></div>
+                                        })
+                                    })()
                                 }
                             </div>
                         )
