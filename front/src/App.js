@@ -1,5 +1,7 @@
 import Switches from "./Switches";
 import React from "react";
+import Content from "./Content";
+import Menu from "./Menu";
 function App() {
     let style = {
         width:"20%",
@@ -8,16 +10,8 @@ function App() {
     }
   return (
    <div align={"center"}>
-       <h1>Компьютерная сеть "Бауманец"</h1>
-       <h2>Система мониторинга работоспособности коммутаторов</h2>
-       <div style={{width:"80%"}}>
-           <div style={style}> 1</div>
-           <div style={style}> 2</div>
-           <div style={style}> 3</div>
-           <div style={style}> 4</div>
-           <div style={style}> 5</div>
-       </div>
-     <Switches />
+    <Menu/>
+    <Content/>
    </div>
   );
 }
