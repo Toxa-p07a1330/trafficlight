@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
-app.get("/", function(request, response){
+const fs = require('fs');
+app.get("/getTraffic", function(request, response){
     response = setHeaders(response);
     let switches = [                //get from Zabbix
         {
@@ -87,13 +88,35 @@ app.get("/", function(request, response){
     switches = switches.reverse();
     response.send(JSON.stringify(switches));
 });
+app.get("/files", (request, response)=>{
+    let test = '111';
+    const source = './source/';
+    let filesPathes = [];
+    response=setHeaders(response);
+    fs.readdir(source, (err, files) => {
+        files.forEach(file => {
+            let wayToFile = require('path').dirname(require.main.filename)+"\\\\source\\"+file;
+            let fileTitle = file.split(".")[0];
+            let pusher = {
+                fileTitle:fileTitle,
+                wayToFile:wayToFile.replace("\\\\","\\")
+            };
+            filesPathes.push(pusher)
 
+        });
+        response.send(JSON.stringify(filesPathes))
+    });
+
+    //response.send(JSON.stringify(filesPathes))
+})
 function setHeaders(response){
     response.setHeader("Content-Type", "application/json; charset=UTF-8");
     response.setHeader("Access-Control-Allow-Origin", "*");
     response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin, Cache-Control");
     return response;
 }
+
+
 
 // начинаем прослушивать подключения на 3000 порту
 app.listen(3001);
