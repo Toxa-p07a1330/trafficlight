@@ -13,7 +13,7 @@ class Menu extends React.Component{
             <div><a href={"/manual"}>Инструкция</a></div>
             <div><a href={"/contact"}>Контакты</a></div>
             <div><a href={"/CreateTicket"}>Создать заявку</a></div>
-            <div><a href={"/tp4"}>Тестовая страница 4</a></div>
+            <div><a href={"/tp4"}>Tasks (temporary)</a></div>
         </div>
     }
 }

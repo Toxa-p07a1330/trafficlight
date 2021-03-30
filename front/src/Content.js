@@ -4,7 +4,7 @@ import TrafficLight from "./TrafficLight";
 import Instruction from "./Instruction";
 import Contacts from "./Contacts";
 import CreateTicket from "./CreateTicket";
-import TextPage4 from "./TextPage4";
+import Tasks from "./Tasks";
 
 class Content extends React.Component{
     render() {
@@ -21,7 +21,7 @@ class Content extends React.Component{
                     <Route exact path="/manual" component={Instruction} />
                     <Route exact path="/contact" component={Contacts} />
                     <Route exact path="/createTicket" component={CreateTicket} />
-                    <Route exact path="/tp4" component={TextPage4} />
+                    <Route exact path="/tp4" component={Tasks} />
                 </Switch>
             </BrowserRouter>
         </div>)
