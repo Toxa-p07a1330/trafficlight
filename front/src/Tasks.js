@@ -1,5 +1,6 @@
 import React from 'react'
 import Switch from "./Switch";
+import Table from 'rc-table';
 import Building from "./Building";
 const wayToApi = "http://34.218.47.120:3002/getAll";
 class Tasks extends React.Component{
@@ -10,6 +11,50 @@ class Tasks extends React.Component{
             isLoaded: false,
         }
     }
+    columns = [
+        {
+            title: 'Имя',
+            dataIndex: 'Name',
+            key: 'Name',
+            width: 100,
+            align: "center",
+
+        },
+        {
+            title: 'Ссылка',
+            dataIndex: 'Link',
+            key: 'Link',
+            width: 100,
+            align: "center"
+        },
+        {
+            title: 'Строение',
+            dataIndex: 'Building',
+            key: 'Building',
+            width: 200,
+            align: "center"
+        },
+        {
+            title: 'Комната',
+            dataIndex: 'Room',
+            key: 'Room',
+            align: "center"
+        },
+        {
+            title: 'Проблема',
+            dataIndex: 'Ticket',
+            key: 'Ticket',
+            align: "center"
+        },
+
+        {
+            title: 'Комментарий',
+            dataIndex: 'Comment',
+            key: 'Comment',
+            align: "center"
+        },
+    ];
+
     render() {
         let style = {
             width: "70%"
@@ -17,14 +62,11 @@ class Tasks extends React.Component{
         return (
             <div style={style}>
                 {(()=>{
+
                     if (this.state.isLoaded){
                         return (
                             <div>
-                                {
-                                    (()=>{
-                                        JSON.stringify(this.state);
-                                    })()
-                                }
+                                <Table columns={this.columns} data={this.state.data} />
                             </div>
                         )
                     }
@@ -36,7 +78,7 @@ class Tasks extends React.Component{
                                     (json)=>{
                                         this.state.data = json
                                         this.state.isLoaded = true;
-                                        this.setState(newState)
+                                        this.setState(newState);
                                     },
                                     (reject)=>{
                                         console.log(reject)
