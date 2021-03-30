@@ -2,7 +2,7 @@ import Switches from "./Switches";
 import React from "react";
 import Content from "./Content";
 import Menu from "./Menu"
-const wayToBackend = "http://localhost:3002/set/";
+const wayToBackend = "http://34.218.47.120/:3002/set/";
 function CreateTicket() {
     let style = {
 
@@ -18,7 +18,13 @@ function CreateTicket() {
         let reqString = JSON.stringify(finalObject);
         if(!isNaN(finalObject.building)) {
             fetch(wayToBackend + reqString).then((response) => {
-                alert("Заявка принята!")
+                alert("Заявка принята!");
+                 document.getElementById("no").value = null;
+                 document.getElementById("nr").value = null;
+                 document.getElementById("t").value = null;
+                 document.getElementById("l").value = null;
+                 document.getElementById("c").value = null;
+
             }, (reject) => {
                 alert("Заявка отклонена!")
             });
