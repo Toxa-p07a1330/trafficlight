@@ -29,28 +29,26 @@ function isSet(url){
 function getAll(url){
 	return url.indexOf("\/getAll")!==-1;
 }
+function clear(url){
+    return url.indexOf("\/clear")!==-1;
+}
 function setData(url, resp){
     if (isSet(url)) {
         let jsonData = url.substr(url.indexOf("set")+4);
         jsonData = JSON.parse(jsonData);
-        console.log(!((+jsonData.room + 0) * (+jsonData.building + 0)))
-        if (!((+jsonData.room + 0) * (+jsonData.building + 0))) {
-            console.log("err")
-            resp.sendStatus = 500;
-            resp.end();
-            return null;
-        }
-        console.log(jsonData);
         let sql = convertURLRequestToSQLRequestSet(jsonData);
         console.log(sql);
         getDataFromSQLite(sql, resp);
     }
     if (getAll(url)){
-		console.log(1);
-		let sql = "SELECT * FROM ISSUES";
+        let sql = "SELECT * FROM ISSUES ";
         getDataFromSQLite(sql, resp);
-	}
-	
+    }
+    if (clear(url)){
+        let sql = "DELETE FROM ISSUES ";
+        getDataFromSQLite(sql, resp);
+    }
+
 	return null;
 }
 function  getDataFromSQLite(request, resp){
