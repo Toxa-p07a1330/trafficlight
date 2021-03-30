@@ -26,6 +26,9 @@ function convertURLRequestToSQLRequestSet(object){
 function isSet(url){
     return url.indexOf("\/set\/")!==-1;
 }
+function getAll(url){
+	return url.indexOf("\/getAll")!==-1;
+}
 function setData(url, resp){
     if (isSet(url)) {
         let jsonData = url.substr(url.indexOf("set")+4);
@@ -42,7 +45,13 @@ function setData(url, resp){
         console.log(sql);
         getDataFromSQLite(sql, resp);
     }
-    else return null;
+    if (getAll(url)){
+		console.log(1);
+		let sql = "SELECT * FROM ISSUES";
+        getDataFromSQLite(sql, resp);
+	}
+	
+	return null;
 }
 function  getDataFromSQLite(request, resp){
     console.log(request)
@@ -54,7 +63,7 @@ function  getDataFromSQLite(request, resp){
                 if (!err)
                 {
                     resolve(rows);
-                    resp.write("Success");
+                    resp.write(JSON.stringify(rows));
                     resp.sendStatus = 200;
                     resp.end();
                 }
