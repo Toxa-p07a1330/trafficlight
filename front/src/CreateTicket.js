@@ -16,11 +16,15 @@ function CreateTicket() {
         finalObject.link = document.getElementById("l").value;
         finalObject.comment = document.getElementById("c").value;
         let reqString = JSON.stringify(finalObject);
-        fetch(wayToBackend+reqString).then((response)=>{
-            alert("Заявка принята!")
-        }, (reject)=>{
-            alert("Заявка отклонена!")
-        });
+        if(!isNaN(finalObject.building)) {
+            fetch(wayToBackend + reqString).then((response) => {
+                alert("Заявка принята!")
+            }, (reject) => {
+                alert("Заявка отклонена!")
+            });
+        }
+        else
+            alert("Некорректные данные");
     }
     return (
         <div align={"center"}>
