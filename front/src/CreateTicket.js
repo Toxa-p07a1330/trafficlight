@@ -19,12 +19,7 @@ function CreateTicket() {
         if(!isNaN(finalObject.building)) {
             fetch(wayToBackend + reqString).then((response) => {
                 alert("Заявка принята!");
-                 document.getElementById("no").value = null;
-                 document.getElementById("nr").value = null;
-                 document.getElementById("t").value = null;
-                 document.getElementById("l").value = null;
-                 document.getElementById("c").value = null;
-
+                
             }, (reject) => {
                 alert("Заявка отклонена!")
             });

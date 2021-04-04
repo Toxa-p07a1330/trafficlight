@@ -52,7 +52,8 @@
       <workItem from="1617108742948" duration="1794000" />
       <workItem from="1617110549478" duration="1037000" />
       <workItem from="1617115977151" duration="245000" />
-      <workItem from="1617117165485" duration="1259000" />
+      <workItem from="1617117165485" duration="1562000" />
+      <workItem from="1617531645128" duration="37000" />
     </task>
     <servers />
   </component>
@@ -70,5 +71,15 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="691" y="198" key="FileChooserDialogImpl" timestamp="1617531677657">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="691" y="198" key="FileChooserDialogImpl/0.0.1920.1028@0.0.1920.1028" timestamp="1617531677657" />
+    <state x="234" y="101" key="new project wizard" timestamp="1617531679831">
+      <screen x="0" y="0" width="1920" height="1028" />
+    </state>
+    <state x="234" y="101" key="new project wizard/0.0.1920.1028@0.0.1920.1028" timestamp="1617531679831" />
   </component>
 </project>
