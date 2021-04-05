@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 app.get("/", function(request, response){
+    console.log("New connction");
     response = setHeaders(response);
     let switches = [                //get from Zabbix
         {
@@ -95,5 +96,6 @@ function setHeaders(response){
     return response;
 }
 
-// начинаем прослушивать подключения на 3000 порту
+// начинаем прослушивать подключения на 3001 порту
 app.listen(3001);
+console.log("start");

@@ -2,10 +2,15 @@ import Switches from "./Switches";
 import React from "react";
 import Content from "./Content";
 import Menu from "./Menu"
-const wayToBackend = "http://34.218.47.120/:3002/set/";
+const wayToBackend = "http://34.218.47.120:3002/set/";
+const wayToAsanaBackend = "http://34.218.47.120:3003/set/";
 function CreateTicket() {
     let style = {
 
+    }
+    function getSafeData(){
+    try{getData();}
+    catch(e){console.log(e);};
     }
     function getData (){
         let finalObject = {};
@@ -19,7 +24,8 @@ function CreateTicket() {
         if(!isNaN(finalObject.building)) {
             fetch(wayToBackend + reqString).then((response) => {
                 alert("Заявка принята!");
-                
+		fetch(wayToAsanaBackend + reqString);
+		window.location.reload();
             }, (reject) => {
                 alert("Заявка отклонена!")
             });
@@ -48,24 +54,24 @@ function CreateTicket() {
                 </div>
             </div>
             <div>
-                <div>Ссылка</div>
+                <div>Контакт для связи</div>
                 <div>
                     <input type={"text"} id={"l"}/>
                 </div>
             </div>
             <div>
-                <div>Проблема</div>
+                <div>Краткое описание проблемы</div>
                 <div>
                     <input type={"text"} id={"t"}/>
                 </div>
             </div>
             <div>
-                <div>Комментарий</div>
+                <div>Подробное описание проблемы</div>
                 <div>
                     <input type={"text"} id={"c"}/>
                 </div>
             </div>
-<button onClick={getData}>Отправить</button>
+<button onClick={getSafeData}>Отправить</button>
         </div>
     );
 }

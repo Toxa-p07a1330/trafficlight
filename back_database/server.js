@@ -6,7 +6,13 @@ http.createServer(function(request, response){
     response.setHeader("Content-Type", "application/json; charset=UTF-8");
     response.setHeader("Access-Control-Allow-Origin", "*");
     response.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin, Cache-Control");
-    setData(reqStr, response);
+    
+	try{
+		setData(reqStr, response);
+	}
+	catch(E){
+	console.log(E);
+	}
 }).listen(3002);
 function convertURLRequestToSQLRequestSet(object){
     console.log(object);
