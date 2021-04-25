@@ -6,7 +6,7 @@ import Menu from "./Menu";
 function browser()
 {
     let ua = navigator.userAgent;
-	
+
     if (ua.search(/MSIE/) > 0) return 'Internet Explorer';
     if (ua.search(/Firefox/) > 0) return 'Firefox';
     if (ua.search(/Opera/) > 0) return 'Opera';
@@ -15,7 +15,7 @@ function browser()
     if (ua.search(/Konqueror/) > 0) return 'Konqueror';
     if (ua.search(/Iceweasel/) > 0) return 'Debian Iceweasel';
     if (ua.search(/SeaMonkey/) > 0) return 'SeaMonkey';
-	
+
     // Браузеров очень много, все вписывать смысле нет, Gecko почти везде встречается
     if (ua.search(/Gecko/) > 0) return 'Gecko';
 
@@ -33,7 +33,7 @@ function App() {
         float: "left"
     }
   return (
-   <div align={"center"}>
+   <div align={"center"} style={{backgroundColor: "#cccccc"}}>
     <Menu/>
     <Content/>
    </div>

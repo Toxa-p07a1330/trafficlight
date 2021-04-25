@@ -11,12 +11,13 @@ function TrafficLight() {
             <h1>Компьютерная сеть "Бауманец"</h1>
             <h2>Система мониторинга работоспособности коммутаторов</h2>
             <div style={{width:"80%"}}>
-                <div style={style}> Адрес</div>
                 <div style={style}> Общага</div>
                 <div style={style}> Этаж</div>
+                <div style={style}> Адрес</div>
                 <div style={style}> Статус</div>
                 <div style={style}> Комментарий</div>
             </div>
+            <br/><br/>
             <Switches />
         </div>
     );
