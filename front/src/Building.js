@@ -19,6 +19,10 @@ class Building extends React.Component{
     handleCloseModal () {
         this.setState({ showModal: false });
     }
+    commonStyle = {
+        border: "0px solid black",
+        width: "20%",
+    }
 
      openModal = ()=>{
          return <div>
@@ -30,7 +34,7 @@ class Building extends React.Component{
                  position: "absolute",
                  marginTop: "-3%",
                  marginLeft:"-1%",
-                 opacity: "0.5"
+                 opacity: "0"
              }}> 111</div>
          <Modal
              isOpen={this.state.showModal}
@@ -38,19 +42,44 @@ class Building extends React.Component{
          >
              {
                  <div
-                 onClick={this.handleCloseModal}
-                 style={{
-                     position: "absolute",
-                     width:"100%",
-                     height:"100%"
-                 }}/>
+                     onClick={this.handleCloseModal}
+                     style={{
+                         position: "absolute",
+                         width:"90%",
+                         height:"90%"
+                     }}/>
              }
+
              {
+                 <div
+                     onClick={this.handleCloseModal}
+                     style={{
+                         position: "absolute",
+                         marginTop: "-3%",
+                         marginLeft: "95.5%",
+                     }}><h1>X</h1></div>
+             }
+
+             <div>
+                 <table style={{width: "95%"}}>
+                     <tr>
+                         <td style={this.commonStyle}>Этаж</td>
+                         <td style={this.commonStyle}>Адрес</td>
+                         <td style={this.commonStyle}>Проблема</td>
+                     </tr>
+                 </table>
+
+             {
+
                  this.props.prop.map((value)=>{
                      console.log(value)
-                     return <Switch prop = {value}/>
+                     return <div style={{width:"95%"}}>
+                         <Switch prop = {value}/>
+                     </div>
                  })
+
              }
+             </div>
 
          </Modal>
          </div>
@@ -77,7 +106,7 @@ class Building extends React.Component{
                         backgroundColor: "green",
                         padding: "2%",
                     }}>
-                        Ok {this.props.prop[0].building}
+                        {this.props.prop[0].building}
 
                     </div>
                 }
@@ -86,7 +115,7 @@ class Building extends React.Component{
                         backgroundColor: "orange",
                         padding: "2%",
                     }}>
-                        WARN {this.props.prop[0].building}
+                        {this.props.prop[0].building}
                         {this.openModal()}
                     </div>
                 }
@@ -96,7 +125,7 @@ class Building extends React.Component{
                         padding: "2%",
                     }}
                     >
-                        CRITIC {this.props.prop[0].building}
+                        {this.props.prop[0].building}
                         {this.openModal()}
                     </div>
                 }
