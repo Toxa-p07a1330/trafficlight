@@ -1,7 +1,7 @@
 import React from 'react'
 import Switch from "./Switch";
 import Building from "./Building";
-const wayToApi = "http://localhost:3001/";
+const wayToApi = "http://34.218.47.120:3001/";
 class Switches extends React.Component{
     constructor() {
         super();

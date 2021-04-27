@@ -36,10 +36,8 @@ class Switch extends React.Component{
             <div style={this.all}>
                     <table style={this.getStyle(this.props.prop.status)}>
                         <tr>
-                            <td style={this.commonStyle}>{this.props.prop.building}</td>
                             <td style={this.commonStyle}>{this.props.prop.floor}</td>
                             <td style={this.commonStyle}>{this.props.prop.ip}</td>
-                            <td style={this.commonStyle}>{this.props.prop.status}</td>
                             <td style={this.commonStyle}>{this.props.prop.description}</td>
                         </tr>
                     </table>

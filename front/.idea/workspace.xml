@@ -11,14 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d138ba8e-2fb1-42a0-b03d-ec6fd3a90155" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../back/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/../back/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Building.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Building.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Switch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Switch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Switches.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Switches.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TrafficLight.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TrafficLight.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +56,7 @@
       <workItem from="1617531645128" duration="37000" />
       <workItem from="1619378313769" duration="1778000" />
       <workItem from="1619380106822" duration="1807000" />
+      <workItem from="1619554639414" duration="125000" />
     </task>
     <servers />
   </component>
